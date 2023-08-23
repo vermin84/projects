@@ -12,19 +12,19 @@
 	$mail->IsHTML(true);
 
 	
-	//$mail->isSMTP();                                            //Send using SMTP
-	//$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-	//$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-	//$mail->Username   = 'verminatro84@gmail.com';                     //SMTP username
-	//$mail->Password   = 'nxbboapttnewensw';                               //SMTP password
-	//$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-	//$mail->Port       = 465;                 
+	$mail->isSMTP();                                            //Send using SMTP
+	$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+	$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+	$mail->Username   = 'verminator84@gmail.com';                     //SMTP username
+	$mail->Password   = 'nxbboapttnewensw';                               //SMTP password
+	$mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
+	$mail->Port       = '587';                 
 	
 
 	//Від кого лист
-	$mail->setFrom('verminatro84@gmail.com', 'Фрілансер по життю'); // Вказати потрібний E-mail
+	$mail->setFrom('verminator84@gmail.com', 'Фрілансер по життю'); // Вказати потрібний E-mail
 	//Кому відправити
-	$mail->addAddress('verminatro84@gmail.com'); // Вказати потрібний E-mail
+	$mail->addAddress('verminator84@gmail.com'); // Вказати потрібний E-mail
 	//Тема листа
 	$mail->Subject = 'Вітання! Це "Фрілансер по життю"';
 
@@ -32,14 +32,14 @@
 	$body = '<h1>Зустрічайте супер листа!</h1>';
 
 	if(trim(!empty($_POST['name']))){
-		$body.='<p><strong>Name:</strong>'.$_POST['name'].'</p>' ;
+		$body.="<p><strong>Name:".$_POST['name']."</strong></p>" ;
 	}
 	if(trim(!empty($_POST['email']))){
-		$body.='<p><strong>Email:</strong>'.$_POST['email'].'</p>' ;
+		$body.="<p><strong>Name:".$_POST['email']."</strong></p>" ;
 	}	
 	
 	if(trim(!empty($_POST['message']))){
-		$body.='<p><strong>Message:</strong> '.$_POST['message'].'</p>' ;
+		$body.="<p><strong>Name:".$_POST['message']."</strong></p>" ;
 	}
 	
 	/*
